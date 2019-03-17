@@ -1,6 +1,6 @@
-package multithreading.Locks.reentrantlock;
+package multithreading.locks.reentrantlock;
 
-import multithreading.Utility.ThreadSleep;
+import multithreading.utility.ThreadSleep;
 
 import java.util.concurrent.locks.Lock;
 

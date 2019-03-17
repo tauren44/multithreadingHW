@@ -1,4 +1,4 @@
-package multithreading.Locks.reentrantlock;
+package multithreading.locks.reentrantlock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

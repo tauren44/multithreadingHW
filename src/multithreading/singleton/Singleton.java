@@ -1,12 +1,21 @@
 package multithreading.singleton;
 
 public class Singleton {
-    private static final Singleton instance = new Singleton();
+    private static volatile Singleton instance = null;
 
     private Singleton() {
     }
 
     public static Singleton getInstance() {
-        return Singleton.instance;
+        Singleton localInstance = instance;
+        if (localInstance == null) {
+            synchronized (Singleton.class) {
+                localInstance = instance;
+                if (localInstance == null) {
+                    instance = localInstance = new Singleton();
+                }
+            }
+        }
+        return localInstance;
     }
 }

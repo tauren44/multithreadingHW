@@ -1,4 +1,4 @@
-package multithreading.Locks.readwritelock;
+package multithreading.locks.readwritelock;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package multithreading.synchronizers.semaphore;
 
-import multithreading.Utility.ThreadSleep;
+import multithreading.utility.ThreadSleep;
 
 import java.util.concurrent.Semaphore;
 

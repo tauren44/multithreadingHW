@@ -1,4 +1,4 @@
-package multithreading.synchronizers.Phaser;
+package multithreading.synchronizers.phaser;
 
 import java.util.ArrayList;
 import java.util.List;

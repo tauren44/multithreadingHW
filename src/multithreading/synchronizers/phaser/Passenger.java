@@ -1,6 +1,6 @@
-package multithreading.synchronizers.Phaser;
+package multithreading.synchronizers.phaser;
 
-import multithreading.Utility.ThreadSleep;
+import multithreading.utility.ThreadSleep;
 
 public class Passenger extends Thread {
     private int departure;

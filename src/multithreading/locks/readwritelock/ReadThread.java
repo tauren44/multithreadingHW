@@ -1,6 +1,6 @@
-package multithreading.Locks.readwritelock;
+package multithreading.locks.readwritelock;
 
-import multithreading.Utility.ThreadSleep;
+import multithreading.utility.ThreadSleep;
 
 import java.util.List;
 import java.util.concurrent.locks.ReadWriteLock;

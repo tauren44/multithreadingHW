@@ -1,4 +1,4 @@
-package multithreading.Utility;
+package multithreading.utility;
 
 public class ThreadSleep {
 

@@ -1,6 +1,6 @@
-package multithreading.Atomic;
+package multithreading.atomic;
 
-import multithreading.Utility.ThreadSleep;
+import multithreading.utility.ThreadSleep;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
