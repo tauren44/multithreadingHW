@@ -1,5 +1,7 @@
 package multithreading.synchronizers.Phaser;
 
+import multithreading.Utility.ThreadSleep;
+
 public class Passenger extends Thread {
     private int departure;
     private int destination;
@@ -12,19 +14,13 @@ public class Passenger extends Thread {
 
     @Override
     public void run() {
-        try {
-            System.out.println(this + " got on the bus");
-
-            while (PhaserTestApp.PHASER.getPhase() < destination) {
-                PhaserTestApp.PHASER.arriveAndAwaitAdvance();
-            }
-
-            Thread.sleep(1);
-            System.out.println(this + " left the bus.");
-            PhaserTestApp.PHASER.arriveAndDeregister();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        System.out.println(this + " got on the bus");
+        while (PhaserTestApp.PHASER.getPhase() < destination) {
+            PhaserTestApp.PHASER.arriveAndAwaitAdvance();
         }
+        ThreadSleep.sleep(1);
+        System.out.println(this + " left the bus.");
+        PhaserTestApp.PHASER.arriveAndDeregister();
     }
 
     @Override

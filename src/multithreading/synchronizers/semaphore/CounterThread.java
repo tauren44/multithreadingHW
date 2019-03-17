@@ -1,5 +1,7 @@
 package multithreading.synchronizers.semaphore;
 
+import multithreading.Utility.ThreadSleep;
+
 import java.util.concurrent.Semaphore;
 
 public class CounterThread implements Runnable {
@@ -19,7 +21,7 @@ public class CounterThread implements Runnable {
             for (int i = 1; i <= 5; i++) {
                 System.out.println(Thread.currentThread().getName() + ": " + SemaphoreTestApp.resource);
                 SemaphoreTestApp.resource++;
-                Thread.sleep(100);
+                ThreadSleep.sleep(100);
             }
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());

@@ -6,9 +6,9 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReadWriteLockTestApp {
-    private static List<String> information = new ArrayList<>();
 
     public static void main(String[] args) {
+        List<String> information = new ArrayList<>();
         ReadWriteLock lock = new ReentrantReadWriteLock();
         Thread readThread = new Thread(new ReadThread(lock, information));
         Thread secondReadThread = new Thread(new ReadThread(lock, information));

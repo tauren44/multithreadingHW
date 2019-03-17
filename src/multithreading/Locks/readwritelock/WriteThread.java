@@ -6,11 +6,11 @@ import java.util.concurrent.locks.ReadWriteLock;
 
 public class WriteThread implements Runnable {
     private ReadWriteLock locker;
-    private static List<String> information;
+    private List<String> information;
 
     public WriteThread(ReadWriteLock locker, List<String> information) {
         this.locker = locker;
-        WriteThread.information = information;
+        this.information = information;
     }
 
     @Override

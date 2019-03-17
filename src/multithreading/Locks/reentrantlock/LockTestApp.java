@@ -9,7 +9,6 @@ public class LockTestApp {
     public static void main(String[] args) {
         Lock lock = new ReentrantLock();
         for (int i = 0; i < 5; i++) {
-
             Thread thread = new Thread(new CountThread(lock));
             thread.setName("Thread " + i);
             thread.start();

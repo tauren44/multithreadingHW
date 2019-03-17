@@ -9,15 +9,7 @@ public class PhaserTestApp {
     private static List<Passenger> passengers = new ArrayList<>();
 
     public static void main(String[] args) {
-        for (int i = 1; i < 5; i++) {           //generate passengers on bus stops
-            if ((int) (Math.random() * 2) > 0) {
-                passengers.add(new Passenger(i, i + 1));
-            }
-
-            if ((int) (Math.random() * 2) > 0) {
-                passengers.add(new Passenger(i, 5));
-            }
-        }
+        generatePassengers();
         testPhaser();
     }
 
@@ -33,16 +25,31 @@ public class PhaserTestApp {
                     PHASER.arriveAndDeregister();
                     break;
                 default:
-                    int currentBusStop = PHASER.getPhase();
-                    System.out.println("Bus stop #" + currentBusStop);
-
-                    for (Passenger passenger : passengers)
-                        if (passenger.getDeparture() == currentBusStop) {
-                            PHASER.register();
-                            passenger.start();
-                        }
-                    PHASER.arriveAndAwaitAdvance();
+                    registerPassengers();
             }
         }
+    }
+
+    private static void generatePassengers() {
+        for (int i = 1; i < 5; i++) {           //generate passengers on bus stops
+            if ((int) (Math.random() * 2) > 0) {
+                passengers.add(new Passenger(i, i + 1));
+            }
+            if ((int) (Math.random() * 2) > 0) {
+                passengers.add(new Passenger(i, 5));
+            }
+        }
+    }
+
+    private static void registerPassengers() {
+        int currentBusStop = PHASER.getPhase();
+        System.out.println("Bus stop #" + currentBusStop);
+
+        for (Passenger passenger : passengers)
+            if (passenger.getDeparture() == currentBusStop) {
+                PHASER.register();
+                passenger.start();
+            }
+        PHASER.arriveAndAwaitAdvance();
     }
 }
