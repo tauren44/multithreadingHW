@@ -36,4 +36,3 @@ public class Passenger extends Thread {
         return departure;
     }
 }
-

@@ -10,16 +10,18 @@ public class PhaserTestApp {
 
     public static void main(String[] args) {
         for (int i = 1; i < 5; i++) {           //generate passengers on bus stops
-            if ((int) (Math.random() * 2) > 0)
+            if ((int) (Math.random() * 2) > 0) {
                 passengers.add(new Passenger(i, i + 1));
+            }
 
-            if ((int) (Math.random() * 2) > 0)
+            if ((int) (Math.random() * 2) > 0) {
                 passengers.add(new Passenger(i, 5));
+            }
         }
+        testPhaser();
+    }
 
-        /**
-         * Phases 0 and 6 are bus depot, phases 1-5 are bus stops
-         * */
+    private static void testPhaser() {
         for (int i = 0; i < 7; i++) {
             switch (i) {
                 case 0:
@@ -39,10 +41,8 @@ public class PhaserTestApp {
                             PHASER.register();
                             passenger.start();
                         }
-
                     PHASER.arriveAndAwaitAdvance();
             }
         }
     }
 }
-

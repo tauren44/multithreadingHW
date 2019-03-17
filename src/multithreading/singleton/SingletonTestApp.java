@@ -9,8 +9,8 @@ public class SingletonTestApp {
             new Thread(() -> System.out.println(Singleton.getInstance().hashCode())).start();
         }
         /*
-        * Reflection breaks singleton
-        * */
+         * Reflection breaks singleton
+         * */
         Singleton singleton = Singleton.getInstance();
         Singleton reflected = singleton;
 

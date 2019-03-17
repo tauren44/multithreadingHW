@@ -12,11 +12,11 @@ public class Singleton {
         if (result == null) {
             synchronized (mutex) {
                 result = instance;
-                if (result == null)
+                if (result == null) {
                     instance = result = new Singleton();
+                }
             }
         }
         return result;
     }
-
 }
