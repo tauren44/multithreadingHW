@@ -18,6 +18,9 @@ public class TestApp {
         ScheduledExecutorService scheduledExecutorService =
                 Executors.newScheduledThreadPool(2);
         scheduledExecutorService.schedule(futureTask, 3, TimeUnit.SECONDS);
+        ScheduledFuture<Integer> scheduledFuture =
+                scheduledExecutorService.schedule(callable, 5, TimeUnit.SECONDS);
+        System.out.println(scheduledFuture.get());
         System.out.println(futureTask.get());
         scheduledExecutorService.shutdown();
 
